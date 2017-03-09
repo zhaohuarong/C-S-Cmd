@@ -36,3 +36,9 @@ Makefile*
 # QtCtreator CMake
 CMakeLists.txt.user
 
+*.stash
+C/release
+C/debug
+S/release
+S/debug
+bin

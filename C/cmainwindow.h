@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 
+class QTcpSocket;
+class QTimer;
+
 namespace Ui {
 class CMainWindow;
 }
@@ -15,8 +18,14 @@ public:
     explicit CMainWindow(QWidget *parent = 0);
     ~CMainWindow();
 
+private slots:
+    void onReadyRead();
+    void onReconnectionTimer();
+
 private:
     Ui::CMainWindow *ui;
+    QTcpSocket *m_pCmdSocket;
+    QTimer *m_pReconnectionTimer;
 };
 
 #endif // CMAINWINDOW_H
